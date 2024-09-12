@@ -1,0 +1,16 @@
+{
+    "plugins": ["plugins/markdown"],
+    "source": {
+        "include": ["src", "tutorials"],
+        "exclude": ["node_modules", "cypress"],
+        "includePattern": ".+\\.js(doc|x)?$"
+    },
+    "opts": {
+        "template": "node_modules/docdash",
+        "destination": "./documentation/developer"
+    },
+    "docdash": {
+	"search": true,
+	"collapse": false
+    }
+}

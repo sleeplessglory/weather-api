@@ -1,43 +1,92 @@
-import React, {useEffect, useRef} from 'react';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Weather.jsx - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-RunAndTest.html">RunAndTest</a></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#Form">Form</a></li><li><a href="global.html#displayError">displayError</a></li><li><a href="global.html#displayWeatherInfo">displayWeatherInfo</a></li><li><a href="global.html#getEmoji">getEmoji</a></li><li><a href="global.html#getWeatherData">getWeatherData</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Weather.jsx</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, {useEffect, useRef} from 'react';
 function Weather({weatherForm, cityInput}) {
     /**
-     * @type {React.RefObject<null>}
+     * @type {React.RefObject&lt;null>}
      * @description A reference to the weather card of the project. It helps to access its CSS property
      * in order to show the result (initially is hidden).
      */
     const cardRef = useRef(null);
     /**
-     * @type {React.RefObject<null>}
+     * @type {React.RefObject&lt;null>}
      * @description A reference to a city name result in a card. Helps to access its CSS property
      * in order to show the result within the weather card (initially is hidden).
      */
     const cityDispRef = useRef(null);
     /**
-     * @type {React.RefObject<null>}
+     * @type {React.RefObject&lt;null>}
      * @description A reference to a temperature result in a card. Helps to access its CSS property
      * in order to show the result within the weather card (initially is hidden).
      */
     const tempRef = useRef(null);
     /**
-     * @type {React.RefObject<null>}
+     * @type {React.RefObject&lt;null>}
      * @description A reference to a humidity result in a card. Helps to access its CSS property
      * in order to show the result within the weather card (initially is hidden).
      */
     const humidityRef = useRef(null);
     /**
-     * @type {React.RefObject<null>}
+     * @type {React.RefObject&lt;null>}
      * @description A reference to a description result in a card. Helps to access its CSS property
      * in order to show the result within the weather card (initially is hidden).
      */
     const descRef = useRef(null);
     /**
-     * @type {React.RefObject<null>}
+     * @type {React.RefObject&lt;null>}
      * @description A reference to an emoji result in a card. Helps to access its CSS property
      * in order to show the result within the weather card (initially is hidden).
      */
     const emojiRef = useRef(null);
     /**
-     * @type {React.RefObject<null>}
+     * @type {React.RefObject&lt;null>}
      * @description A reference to an error in a card. Helps to access its CSS property
      * in order to show the result within the weather card (initially is hidden).
      */
@@ -115,19 +164,19 @@ function Weather({weatherForm, cityInput}) {
      */
     function getEmoji(weatherId) { //reference to https://openweathermap.org/weather-conditions for IDs
         switch(true) { //does the value of "true" match one of the elements?
-            case (weatherId >= 200 && weatherId < 300):
+            case (weatherId >= 200 &amp;&amp; weatherId &lt; 300):
                 return "⛈"; //added "Segoe UI Emoji" font to the "Editor Font Family" in the VS Code settings in order to properly paste emojis
-            case (weatherId >= 300 && weatherId < 400): //use "Shift+Tab" to tab backwards
+            case (weatherId >= 300 &amp;&amp; weatherId &lt; 400): //use "Shift+Tab" to tab backwards
                 return "🌧";
-            case (weatherId >= 500 && weatherId < 600):
+            case (weatherId >= 500 &amp;&amp; weatherId &lt; 600):
                 return "🌧";
-            case (weatherId >= 600 && weatherId < 700):
+            case (weatherId >= 600 &amp;&amp; weatherId &lt; 700):
                 return "❄";
-            case (weatherId >= 700 && weatherId < 800):
+            case (weatherId >= 700 &amp;&amp; weatherId &lt; 800):
                 return "🌫";
             case (weatherId === 800):
                 return "☀";
-            case (weatherId >= 801 && weatherId < 810):
+            case (weatherId >= 801 &amp;&amp; weatherId &lt; 810):
                 return "☁";
             default:
                 return "❔";
@@ -157,7 +206,7 @@ function Weather({weatherForm, cityInput}) {
      * returs a "data" object, otherwise throws an error, if couldn't fetch weather data.
      */
     async function getWeatherData(request) {
-        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${request}&appid=${apiKey}`; //the link taken from https://openweathermap.org/current
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${request}&amp;appid=${apiKey}`; //the link taken from https://openweathermap.org/current
         const response = await fetch(apiUrl);
         console.log(response); //for a developer
         if(!response.ok) {
@@ -167,19 +216,45 @@ function Weather({weatherForm, cityInput}) {
     }
 
     return(
-        <>
-            <div className="weather"> {/*BEM structure*/}
-                <h1 className="weather__cap" data-test="capt">How Big, How Blue, How Beautiful is the sky now?</h1>
-                <div className="weather__card"     style={{display: "none"}} ref={cardRef}     data-test ="card">
-                    <h1 className="cityDisplay"    style={{display: "none"}} ref={cityDispRef} data-test="city"></h1>
-                    <p className="tempDisplay"     style={{display: "none"}} ref={tempRef}     data-test="temp"></p>
-                    <p className="humidityDisplay" style={{display: "none"}} ref={humidityRef} data-test="hum"></p>
-                    <p className="descDisplay"     style={{display: "none"}} ref={descRef}     data-test="desc"></p>
-                    <p className="emojiDisplay"    style={{display: "none"}} ref={emojiRef}    data-test="emoji"></p>
-                    <p className="errorDisplay"    style={{display: "none"}} ref={errorRef}    data-test="error"></p>
-                </div>
-            </div>
-        </>
+        &lt;>
+            &lt;div className="weather"> {/*BEM structure*/}
+                &lt;h1 className="weather__cap" data-test="capt">How Big, How Blue, How Beautiful is the sky now?&lt;/h1>
+                &lt;div className="weather__card"     style={{display: "none"}} ref={cardRef}     data-test ="card">
+                    &lt;h1 className="cityDisplay"    style={{display: "none"}} ref={cityDispRef} data-test="city">&lt;/h1>
+                    &lt;p className="tempDisplay"     style={{display: "none"}} ref={tempRef}     data-test="temp">&lt;/p>
+                    &lt;p className="humidityDisplay" style={{display: "none"}} ref={humidityRef} data-test="hum">&lt;/p>
+                    &lt;p className="descDisplay"     style={{display: "none"}} ref={descRef}     data-test="desc">&lt;/p>
+                    &lt;p className="emojiDisplay"    style={{display: "none"}} ref={emojiRef}    data-test="emoji">&lt;/p>
+                    &lt;p className="errorDisplay"    style={{display: "none"}} ref={errorRef}    data-test="error">&lt;/p>
+                &lt;/div>
+            &lt;/div>
+        &lt;/>
     );
 }
-export default Weather;
+export default Weather;</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.3</a> on Fri Sep 13 2024 01:45:45 GMT+0300 (Moscow Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+
+</body>
+</html>
