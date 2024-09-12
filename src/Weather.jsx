@@ -12,7 +12,7 @@ function Weather({weatherForm, cityInput}) {
     useEffect(() => {
         weatherForm.current.addEventListener("submit", async event => { //async arrow function
             event.preventDefault(); //"submit" events refresh the page by default (we need to prevent it)
-            const request = cityInput.current.value;
+            const request = cityInput.current.value.trim();
             if(request){ //if "request" has a value
                 cardRef.current.style.display = "flex";
                 try{ 
@@ -95,14 +95,14 @@ function Weather({weatherForm, cityInput}) {
     return(
         <>
             <div className="weather"> {/*BEM structure*/}
-                <h1 className="weather__cap">How Big, How Blue, How Beautiful is the sky now?</h1>
-                <div className="weather__card"      style={{display: "none"}} ref={cardRef}>
-                    <h1 className="cityDisplay"    style={{display: "none"}} ref={cityDispRef}></h1>
-                    <p className="tempDisplay"     style={{display: "none"}} ref={tempRef}></p>
-                    <p className="humidityDisplay" style={{display: "none"}} ref={humidityRef}></p>
-                    <p className="descDisplay"     style={{display: "none"}} ref={descRef}></p>
-                    <p className="emojiDisplay"    style={{display: "none"}} ref={emojiRef}></p>
-                    <p className="errorDisplay"    style={{display: "none"}} ref={errorRef}></p>
+                <h1 className="weather__cap" data-test="capt">How Big, How Blue, How Beautiful is the sky now?</h1>
+                <div className="weather__card"     style={{display: "none"}} ref={cardRef}     data-test ="card">
+                    <h1 className="cityDisplay"    style={{display: "none"}} ref={cityDispRef} data-test="city"></h1>
+                    <p className="tempDisplay"     style={{display: "none"}} ref={tempRef}     data-test="temp"></p>
+                    <p className="humidityDisplay" style={{display: "none"}} ref={humidityRef} data-test="hum"></p>
+                    <p className="descDisplay"     style={{display: "none"}} ref={descRef}     data-test="desc"></p>
+                    <p className="emojiDisplay"    style={{display: "none"}} ref={emojiRef}    data-test="emoji"></p>
+                    <p className="errorDisplay"    style={{display: "none"}} ref={errorRef}    data-test="error"></p>
                 </div>
             </div>
         </>

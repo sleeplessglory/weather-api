@@ -6,7 +6,7 @@ function Form() {
     const formRef = useRef(null);
     return(
         <>
-            <form className="weather-form" ref={formRef}>
+            <form className="weather-form" ref={formRef} >
                 <input type="text" className="city-input" ref={cityInputRef} placeholder="Enter city" />
                 <button type="submit">Get weather</button>
             </form>
