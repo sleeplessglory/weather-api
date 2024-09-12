@@ -1,16 +1,12 @@
-import WeatherCard from './WeatherCard.jsx';
 import Form from './Form.jsx';
+import Weather from './Weather.jsx';
+import "./index.css";
 function App() {
-    const styles = { /*Inline CSS styling for <h1>*/
-        
-    }
     return(
         <>
-            <Form />
-            <h1 id="weather-cap" style={styles}>How Big, How Blue, How Beautiful is the sky now?</h1>
-            <WeatherCard />
-        </>
-    );
+            <Form>
+                <Weather />
+            </Form>
+        </>);
 }
-
 export default App;

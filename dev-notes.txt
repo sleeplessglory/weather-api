@@ -1,0 +1,2 @@
+When using API keys, run: npm install dotenv
+For Vite React App in ".env" file use: VITE_API_KEY=yourApiKey
