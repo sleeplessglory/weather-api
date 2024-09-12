@@ -94,14 +94,16 @@ function Weather({weatherForm, cityInput}) {
 
     return(
         <>
-            <h1 className="weather-cap">How Big, How Blue, How Beautiful is the sky now?</h1>
-            <div className="card"              style={{display: "none"}} ref={cardRef}>
-                <h1 className="cityDisplay"    style={{display: "none"}} ref={cityDispRef}></h1>
-                <p className="tempDisplay"     style={{display: "none"}} ref={tempRef}></p>
-                <p className="humidityDisplay" style={{display: "none"}} ref={humidityRef}></p>
-                <p className="descDisplay"     style={{display: "none"}} ref={descRef}></p>
-                <p className="emojiDisplay"    style={{display: "none"}} ref={emojiRef}></p>
-                <p className="errorDisplay"    style={{display: "none"}} ref={errorRef}></p>
+            <div className="weather"> {/*BEM structure*/}
+                <h1 className="weather__cap">How Big, How Blue, How Beautiful is the sky now?</h1>
+                <div className="weather__card"      style={{display: "none"}} ref={cardRef}>
+                    <h1 className="cityDisplay"    style={{display: "none"}} ref={cityDispRef}></h1>
+                    <p className="tempDisplay"     style={{display: "none"}} ref={tempRef}></p>
+                    <p className="humidityDisplay" style={{display: "none"}} ref={humidityRef}></p>
+                    <p className="descDisplay"     style={{display: "none"}} ref={descRef}></p>
+                    <p className="emojiDisplay"    style={{display: "none"}} ref={emojiRef}></p>
+                    <p className="errorDisplay"    style={{display: "none"}} ref={errorRef}></p>
+                </div>
             </div>
         </>
     );

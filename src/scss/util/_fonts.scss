@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, Segoe UI Emoji, Georgia;
+}
+.city-input {
+    font-size: 2rem;
+    font-weight: bold;
+}
+button[type="submit"] {
+    font-weight: bold;
+    font-size: 2rem;
+    color: white;
+}
+.weather__cap {
+    font-size: 3em;
+    color: hsl(238, 87%, 33%);
+}
+.weather__card {
+    color: white;
+}
+.cityDisplay, .tempDisplay {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+.humidityDisplay {
+    font-weight: bold;
+    font-size: 2rem;
+}
+.descDisplay {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 2rem;
+}
+.emojiDisplay {
+    font-size: 7.5rem;
+}
+.errorDisplay {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+@media screen and (max-width: 800px) {
+    .weather__cap {
+        font-size: 1.7em;
+    }
+    .cityDisplay, .tempDisplay {
+        font-size: 2em;
+    }
+    .humidityDisplay, .descDisplay {
+        font-size: 1.4em;
+    }
+    .emojiDisplay {
+        font-size: 5em;
+    }
+    .city-input {
+        font-size: 1.2rem;
+    }
+    button[type="submit"] {
+        font-size: 1.2rem;
+    }
+}

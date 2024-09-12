@@ -1,0 +1,17 @@
+.city-input {
+    padding: 10px;
+    border: 2px solid hsla(0, 0%, 20%, 0.3);
+    border-radius: 10px;
+    margin: 1.5em 1em 0;
+    width: 14em;
+}
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: hsl(126, 87%, 29%);
+    border: none;
+    border-radius: 5px;
+}
+button[type="submit"]:hover {
+    cursor: pointer;
+    background-color: hsl(126, 87%, 34%);
+}

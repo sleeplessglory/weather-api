@@ -1,0 +1,43 @@
+body {
+    background-color: hsl(201, 100%, 93%);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+.weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__cap {
+        font-size: 3.5em;
+        margin: 1em 0 0.5em 0;
+        color: hsl(238, 87%, 33%);
+    }
+    &__card {
+        margin: 1.5em;
+        
+    }
+}
+@media screen and (max-width: 800px) {
+    .weather {
+        &__cap {
+            margin: 0.5em 0.5em 0;
+        }
+        &__card {
+            margin: 1em 0 2em;
+            min-width: 12em;
+            width: 14em;
+        }
+    }
+    .city-input {
+        width: 12em;
+        margin-bottom: 1em;
+    }
+    button[type="submit"] {
+        width: 12em;
+        padding: 0.6em;
+    }
+}
