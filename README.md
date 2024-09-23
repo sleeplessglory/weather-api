@@ -9,7 +9,7 @@ The layout for a desktop version of the application.
 
 ![Desktop](https://github.com/user-attachments/assets/fc93bff3-7cae-4e3f-8cbb-bcd0d36e6017)
 ## Mobile verison
-The layout for a mobile version changes and stores all the stopwatches in a single column.
+The layout for a mobile version changes and stores all the elements in a single column.
 
 ![Mobile](https://github.com/user-attachments/assets/664a17a5-abaa-47b5-9c0d-643e5e3b2378)
 # Cypress tests
